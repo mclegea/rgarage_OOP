@@ -3,13 +3,19 @@ module Library
   class Reader
     attr_reader :name, :email, :city, :street, :house
   
-    def initialize(name, email = nil, city = nil, street = nil, house = nil)
-      @title = title
-      @author = author
+    def initialize(name, options = {})
+      @name = name
+      @email = options[:email]
+      @city = options[:city]
+      @street = options[:street]
+      @house = options[:house]
     end
     
     def to_s
-      puts "Book \"#{title}\" by #{author}"
+      puts "Reader #{@name}"
+      puts "Adress: #{@city}, #{@house}, #{@street}" unless @city.nil?
+      string += " <#{@email}>" unless @email.nil?
+      
     end
   
     
