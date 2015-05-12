@@ -5,8 +5,8 @@ module Library
     attr_reader :title, :author
   
     def initialize(title, author)
-      @title = title
-      @author = author
+      self.title = title
+      self.author = author
     end
     
     def to_s
