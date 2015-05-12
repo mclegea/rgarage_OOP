@@ -12,10 +12,10 @@ module Library
     end
     
     def to_s
-      puts "Reader #{@name}"
-      puts "Adress: #{@city}, #{@house}, #{@street}" unless @city.nil?
-      string += " <#{@email}>" unless @email.nil?
-      
+      puts "Name: #{name}"
+      puts "City: #{city}" if city
+      puts "Adress: #{house}, #{street}" if city && house && street
+      puts "Email: #{email}" if email
     end
   
     
