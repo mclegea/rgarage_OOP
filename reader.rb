@@ -1,14 +1,14 @@
 module Library
   
   class Reader
-    attr_reader :name, :email, :city, :street, :house
+    attr_accessor :name, :email, :city, :street, :house
   
     def initialize(name, options = {})
-      @name = name
-      @email = options[:email]
-      @city = options[:city]
-      @street = options[:street]
-      @house = options[:house]
+      self.name   = name
+      self.email  = options[:email]
+      self.city   = options[:city]
+      self.street = options[:street]
+      self.house  = options[:house]
     end
     
     def to_s
