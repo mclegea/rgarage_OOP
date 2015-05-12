@@ -2,7 +2,7 @@
 module Library
   
   class Book
-    attr_reader :title, :author
+    attr_accessor :title, :author
   
     def initialize(title, author)
       self.title = title
