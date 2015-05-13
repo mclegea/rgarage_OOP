@@ -1,4 +1,4 @@
-require "library/version"
+#require "library/version"
 require "library/author"
 require "library/book"
 require "library/reader"
@@ -20,13 +20,11 @@ module Library
     end
 
     def add_book (book)
-      raise TypeError, 'Wrong book type' unless book.kind_of?(Book)
       @books << book
       @authors << book.author unless @authors.include?(book.author)
     end
 
     def order (book, reader)
-      raise TypeError, 'Wrong reader type' unless reader.kind_of?(Reader)
       self.add_book(book) unless @books.include?(book)
       @orders << Order.new(book, reader)
       @readers << reader unless @readers.include?(reader)
@@ -46,7 +44,6 @@ module Library
 
     def how_many_people_ordered_one_of_three_most_popular_books
       selected_range = 0..2
-      # Sort books by popularity
       books = @orders.group_by(&:book).sort_by{|item| item.last.size}.reverse!
       popular_books = books[selected_range].map(&:first)
       result = {}
@@ -59,13 +56,11 @@ module Library
     end
 
     def save (filename='library.bin')
-      raise TypeError, 'String expected' unless filename.kind_of?(String)
       raw = Marshal.dump(self)
       File.write(filename, raw)
     end
 
     def self.load (filename='library.bin')
-      raise TypeError, 'String expected' unless filename.kind_of?(String)
       unless File.exist? filename
         puts "File '#{filename}' not found. New library created."
         return Library.new
