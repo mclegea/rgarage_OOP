@@ -7,7 +7,6 @@ module Library
       self.biography = biography
     end
 
-   
     def to_s
       "#{name}"
     end
