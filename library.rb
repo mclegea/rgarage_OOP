@@ -9,10 +9,7 @@ module Library
   class Library
     
     def initialize()
-      @books = []
-      @orders = []
-      @readers = []
-      @authors = []
+      @books, @orders, @readers, @authors = [], [], [], []
     end
 
     def << (book)
