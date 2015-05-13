@@ -2,6 +2,7 @@
 module Library
   
   class Book
+    
     attr_accessor :title, :author
   
     def initialize(title, author)
@@ -9,7 +10,7 @@ module Library
       self.author = author
     end
     
-    def to_s
+        def to_s
       puts "Book \"#{title}\" by #{author}"
     end
   
