@@ -31,7 +31,6 @@ module Library
     end
 
     def who_often_takes_the_book(book)
-      raise TypeError, 'Wrong book type' unless book.kind_of?(Book)
       orders = @orders.select {|order| order.book == book}
       readers = orders.map {|order| order.reader}
       _most_common_value(readers)
