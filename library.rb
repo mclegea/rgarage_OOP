@@ -44,7 +44,7 @@ module Library
       popular_books = books[selected_range].map(&:first)
       result = {}
 
-      # Search unique readers for each book
+      # unique readers for each book
       popular_books.each_with_index do |book, index|
         result[book] = books[index].last.uniq{|offer| offer.reader}.size
       end
@@ -58,7 +58,7 @@ module Library
 
     def self.load (filename='library.bin')
       unless File.exist? filename
-        puts "File '#{filename}' not found. New library created."
+        puts "File '#{filename}' not found. New library."
         return Library.new
       end
       raw = File.read(filename)
