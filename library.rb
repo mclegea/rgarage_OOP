@@ -1,4 +1,4 @@
-#require "library/version"
+require "library/version"
 require "library/author"
 require "library/book"
 require "library/reader"
